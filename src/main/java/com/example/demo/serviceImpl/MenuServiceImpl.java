@@ -1,11 +1,21 @@
 package com.example.demo.serviceImpl;
 
 import com.example.demo.dto.MenuDto;
+<<<<<<< HEAD
+=======
+import com.example.demo.dto.ProfilMenu;
+>>>>>>> 8c493b383944aaf7cef5c17ad6eb5d1afec31270
 import com.example.demo.model.Menu;
 import com.example.demo.repository.MenuRepository;
 import com.example.demo.service.MenuService;
 import lombok.AllArgsConstructor;
+<<<<<<< HEAD
 import org.modelmapper.ModelMapper;
+=======
+import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
+import org.springframework.data.domain.Page;
+>>>>>>> 8c493b383944aaf7cef5c17ad6eb5d1afec31270
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -64,8 +74,13 @@ public class MenuServiceImpl implements MenuService {
     }
 
     @Override
+<<<<<<< HEAD
     public List<Menu> getJoinInformation(Long id) {
         return menuRepository.getMenuByProfil(id);
+=======
+    public List<ProfilMenu> getJoinInformation(Long id) {
+        return menuRepository.getJoinInformation(id);
+>>>>>>> 8c493b383944aaf7cef5c17ad6eb5d1afec31270
     }
 
     @Override
