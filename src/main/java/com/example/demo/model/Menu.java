@@ -21,8 +21,8 @@ public class Menu implements Serializable {
     private String code;
     private String icon;
     private String route;
-    private Long parent_Id;
+    private Long parentId;
     private Long priorite;
-    private Long profil_id;
+    private Long profilId;
 
 }

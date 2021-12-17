@@ -2,7 +2,6 @@ package com.example.demo.controller;
 
 
 import com.example.demo.dto.MenuDto;
-<<<<<<< HEAD
 import com.example.demo.model.Menu;
 import com.example.demo.service.MenuService;
 import com.example.demo.service.ProfilService;
@@ -10,23 +9,6 @@ import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-=======
-import com.example.demo.dto.ProfilMenu;
-import com.example.demo.model.Menu;
-import com.example.demo.model.Profil;
-import com.example.demo.repository.MenuRepository;
-import com.example.demo.service.MenuService;
-import com.example.demo.service.ProfilService;
-import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
-import java.util.Set;
-import java.util.function.Function;
-import java.util.stream.Collectors;
->>>>>>> 8c493b383944aaf7cef5c17ad6eb5d1afec31270
 
 @RestController
 @RequestMapping("api")
@@ -51,25 +33,19 @@ public class MenuController {
     @PutMapping("/menus/{id}")
     public Menu updateMenu(@PathVariable(value = "id") Long id, @RequestBody Menu menu) {
         Menu updatedMenu = menuService.getMenuById(id);
-        updatedMenu.setId(menu.getId());
         updatedMenu.setLibelle(menu.getLibelle());
         updatedMenu.setIcon(menu.getIcon());
         updatedMenu.setCode(menu.getCode());
         updatedMenu.setRoute(menu.getRoute());
-        updatedMenu.setParent_Id(menu.getParent_Id());
+        updatedMenu.setParentId(menu.getParentId());
         updatedMenu.setPriorite(menu.getPriorite());
-        updatedMenu.setProfil_id(menu.getProfil_id());
+        updatedMenu.setProfilId(menu.getProfilId());
         return menuService.updateMenu(id, updatedMenu);
     }
 
     @GetMapping("/getInfo/{id}")
-<<<<<<< HEAD
     public List<Menu> getInfo(@PathVariable Long id){
             return menuService.getMenuByProfil(id);
-=======
-    public List<ProfilMenu> getInfo(@PathVariable Long id){
-            return menuService.getJoinInformation(id);
->>>>>>> 8c493b383944aaf7cef5c17ad6eb5d1afec31270
         }
 
         @GetMapping("/menus/{id}")

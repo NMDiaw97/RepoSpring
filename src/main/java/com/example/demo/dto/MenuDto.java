@@ -18,7 +18,7 @@ public class MenuDto {
     private String code;
     private String icon;
     private String route;
-    private Long parent_Id;
+    private Long parentId;
     private Long priorite;
-    private Profil profil_id;
+    private Long profilId;
 }
